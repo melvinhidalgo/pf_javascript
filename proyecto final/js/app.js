@@ -34,32 +34,37 @@ display.textContent=display.textContent+"1";
 }
 
 dos.onclick = function(e) {
-  display.textContent=display.textContent +2;
+  display.textContent=display.textContent +'2';
 }
 tres.onclick = function(e) {
-  display.textContent= display.textContent+3;
+  display.textContent= display.textContent+'3';
 }
 cuatro.onclick = function(e) {
-  display.textContent= display.textContent+4;
+  display.textContent= display.textContent+'4';
 }
 cinco.onclick = function(e) {
-  display.textContent= display.textContent+5;
+  display.textContent= display.textContent+'5';
 }
 seis.onclick = function(e) {
-  display.textContent= display.textContent+6;
+  display.textContent= display.textContent+'6';
 }
 siete.onclick = function(e) {
-  display.textContent=display.textContent +7;
+  display.textContent=display.textContent +'7';
 }
 ocho.onclick = function(e) {
-  display.textContent= display.textContent+8;
+  display.textContent= display.textContent+'8';
 }
 nueve.onclick = function(e) {
-  display.textContent= display.textContent+9;
+  display.textContent= display.textContent+'9';
 }
 cero.onclick = function(e) {
-  display.textContent= display.textContent+0;
+  display.textContent= display.textContent+'0';
 }
+punto.onclick = function(){
+  display.textContent = display.textContent+'.';
+}
+
+
 
 
 
@@ -95,9 +100,6 @@ igual.onclick = function(e) {
   digitob= display.textContent;
   resolver();
 }
-
-
-
 
 function limpiar(){
   display.textContent='';
@@ -233,10 +235,48 @@ else{
 cero.onclick= function(){
    if(display.textContent=="0"){
     display.textContent='0';
- }else{
+ }else if (display.textContent.length>='9') {
+   display.textContent=display.textContent+"";
+ }
+ else{
    display.textContent=display.textContent+'0';
  }
 }
+
+punto.onclick=function(){
+  if(display.textContent=='0'){
+    display.textContent=display.textContent+'.';
+  }
+  else if(display.textContent.length<='8') {
+    display.textContent=display.textContent+".";
+  }
+  else if (display.textContent>='9') {
+    display.textContent=display.textContent+'';
+  }
+}
+
+punto.onclick=function(){
+if(display.textContent.indexOf('.')=='-1'){
+display.textContent=display.textContent+'.';
+}
+else {
+display.textContent=display.textContent+'';
+}
+}
+
+sign.onclick=function(){
+if(display.textContent.indexOf('sign')=='-1'){
+display.textContent='-';
+}
+else {
+display.textContent='-'+display.textContent;
+}
+}
+
+
+
+
+
 
 function resolver(){
   var result= 0;
@@ -317,12 +357,60 @@ document.getElementById('0').style='width:27%';
 cero.onmouseup=function(){
 document.getElementById('0').style='width:28%';
 }
-
-
-
-
-
-
+punto.onmousedown=function(){
+document.getElementById('punto').style='width:27%';
+}
+punto.onmouseup=function(){
+document.getElementById('punto').style='width:28%';
+}
+sign.onmousedown=function(){
+document.getElementById('sign').style='width:21%';
+}
+sign.onmouseup=function(){
+document.getElementById('sign').style='width:22%';
+}
+on.onmousedown=function(){
+document.getElementById('on').style='width:21%';
+}
+on.onmouseup=function(){
+document.getElementById('on').style='width:22%';
+}
+raiz.onmousedown=function(){
+document.getElementById('raiz').style='width:21%';
+}
+raiz.onmouseup=function(){
+document.getElementById('raiz').style='width:22%';
+}
+dividido.onmousedown=function(){
+document.getElementById('dividido').style='width:21%';
+}
+dividido.onmouseup=function(){
+document.getElementById('dividido').style='width:22%';
+}
+por.onmousedown=function(){
+document.getElementById('por').style='width:21%';
+}
+por.onmouseup=function(){
+document.getElementById('por').style='width:22%';
+}
+menos.onmousedown=function(){
+document.getElementById('menos').style='width:21%';
+}
+menos.onmouseup=function(){
+document.getElementById('menos').style='width:22%';
+}
+mas.onmousedown=function(){
+document.getElementById('mas').style='width:85%';
+}
+mas.onmouseup=function(){
+document.getElementById('mas').style='width:86%';
+}
+igual.onmousedown=function(){
+document.getElementById('igual').style='width:29%';
+}
+igual.onmouseup=function(){
+document.getElementById('igual').style='width:30%';
+}
 
 
 }
